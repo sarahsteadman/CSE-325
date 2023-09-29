@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaDesk", "MegaDesk\MegaDesk.csproj", "{D66D8533-A1AA-4BB7-B3C3-53F759C4AB56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4A2655E0-29CB-43FE-ABC2-9BF50D87BB4F}"
+	ProjectSection(SolutionItems) = preProject
+		MegaDesk\DefinetlyNotDeskQuote.cs = MegaDesk\DefinetlyNotDeskQuote.cs
+		MegaDesk\deskImage.jpg = MegaDesk\deskImage.jpg
+		MegaDesk\deskImage.png = MegaDesk\deskImage.png
+		MegaDesk\DisplayQuote.Designer.cs = MegaDesk\DisplayQuote.Designer.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D66D8533-A1AA-4BB7-B3C3-53F759C4AB56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D66D8533-A1AA-4BB7-B3C3-53F759C4AB56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D66D8533-A1AA-4BB7-B3C3-53F759C4AB56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D66D8533-A1AA-4BB7-B3C3-53F759C4AB56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DAFD19E-BD02-4108-B113-E456B2531A07}
+	EndGlobalSection
+EndGlobal

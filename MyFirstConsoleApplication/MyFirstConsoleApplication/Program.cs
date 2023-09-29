@@ -27,6 +27,7 @@ namespace MyFirstConsoleApplication
             double width, height, woodLength, glassArea;
             string widthString, heightString;
 
+
             Console.WriteLine("Please enter the width of the wood:");
             widthString = Console.ReadLine();
             width = double.Parse(widthString);
