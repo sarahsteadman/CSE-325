@@ -1,0 +1,171 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: #e5ffc7
+}
+/*Index*/
+#top {
+    margin: 60px 0px;
+  display: flex;
+  align-items:center;
+  flex-direction:column;
+}
+#index-contents {
+  display: grid;
+  grid-template-columns: 1fr 1.50fr;
+}
+#index-table{
+    border: 1px solid #6ad056;
+    background-color: white;
+}
+p {
+    text-align:center;
+}
+#title{
+    font-weight:900;
+    font-size: 20px;
+    margin:0px;
+}
+.sorter{
+    text-decoration: none;
+}
+.sorter:hover{
+    color:maroon;
+}
+label, #search {
+  display: flex;
+  flex-direction: column;
+  margin: 5px auto;
+  width: 80%;
+  max-width: 300px;
+  font-family: 'Arial';
+}
+input, select {
+  max-width: 300px;
+}
+
+h1, th, #title {
+  font-family: 'Cardo', serif;
+}
+h1{
+  display: block;
+}
+
+td, dd, dt {
+  font-family: 'Arial';
+}
+
+.buttons {
+  width: auto;
+  max-width: 150px;
+  height: 35px;
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  border-bottom: solid 3px #778ba5;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px 15px;
+}
+  .buttons:hover {
+    transform: translate(0px, 2px);
+    border: none;
+    color: white;
+  }
+  #filter
+  {
+  margin: 15px auto;
+  }
+/*Edit/ Create pages*/
+.text-input, .note-input {
+  height: 115px;
+  width: 39vw;
+  padding: 10px;
+}
+.scripture-form{
+    display: flex;
+    justify-content:center;
+}
+.input-area {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px;
+}
+.input-area input{
+    margin: 5px;
+}
+.input-area:nth-child(3){
+    justify-content:space-evenly;
+}
+
+.scripture-form .buttons {
+  margin: 15px 0px;
+}
+
+.scripture-form label {
+  margin: 5px;
+}
+.form-group{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+/*Details and Delete*/
+dl {
+  border: 1px solid #6ad056;
+  background-color: white;
+  padding: 20px;
+}
+.display-content {
+  width: 90%;
+  max-width: 650px;
+  margin: 40px auto;
+}
+.link{
+    background-color: lightyellow;
+    border: 2px solid;
+    padding: 4px 9px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.link:hover{
+    color:maroon;
+    border-color:maroon;
+}
+#delete{
+    background-color: #e52a2a;
+    border-color: maroon;
+    margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 995px) {
+  #index-contents {
+    display: block;
+  }
+  .scripture-form{
+      flex-direction: column
+  }
+  .scripture-form input, .scripture-form textarea{
+      width: 100%;
+      max-width: 1000px;
+  }
+}

@@ -1,0 +1,9 @@
+ To move pieces on the Chess board, select a square by typing in the row then column name ie(A1)
+ A set of moves that the piece can perform will will appear.  Enter one of the options.
+
+    *Please note that if that move puts your king in check, you will be asked to select another one.
+
+ If you'd like to go back and select a different piece, enter "b".
+ If you would like to castle, select the rook and then the spot it would move to when it castles. If you are able to castle you will be given that option.
+
+ To learn what moves each Piece can perform, or to learn the rules of Chess, go to https://chesscoachonline.com/chess-rules

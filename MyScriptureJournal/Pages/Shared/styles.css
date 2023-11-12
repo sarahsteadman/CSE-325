@@ -1,0 +1,34 @@
+#index-contents {
+  display: grid;
+  grid-template-columns: 1fr 1.50fr;
+}
+
+body {
+  background-color: antiquewhite;
+}
+label, #search {
+  display: flex;
+  flex-direction: column;
+  margin: 5px auto;
+  width: 80%;
+  max-width: 300px;
+  font-family: 'Arial';
+}
+input, select{
+    width: 300px;
+}
+h1, th {
+  font-family: 'Cardo', serif;
+}
+td {
+  font-family: 'Arial';
+}
+a, .filter-button {
+  width: 75px;
+  height: 35px;
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 15px auto
+}

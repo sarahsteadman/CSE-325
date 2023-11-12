@@ -4,54 +4,65 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
+<div id="top">
+<h1>All Scripture Entries</h1>
+<a class="buttons" asp-page="Create">Create New</a>
+</div>
 
 <p>
-    <a asp-page="Create">Create New</a>
 </p>
-<form>
-        <label>KeyWord: <input type="text" asp-for="SearchString" /></label>
-        <label>Book: <input type="text" asp-for="ScriptureBook" /></label>
-        <label>Start Date: <input type="date" asp-for="StartDate" /></label>
-        <label>End Date: <input type="date" asp-for="EndDate" /></label>
-        <label>Book Filter: <select asp-for="ScriptureBook" asp-items="Model.Books"> <option value="">All</option></select></label>
-        <input type="submit" value="Filter" />
-</form>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Scripture[0].Book)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Scripture[0].Verses)
-            </th>
-            <th>
-                Date Added
-            </th>
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Scripture) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Book)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Verses)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateAdded)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div id="index-contents">
+    <form id="search">
+        <p id="title">Sort By:</p>
+        <p>
+            <a class="sorter" asp-page-handler="SortByBook">Book</a>  / <a class="sorter" asp-page-handler="SortByDate">Date Added</a>
+        </p>
+        <label>KeyWord: <input type="text" asp-for="SearchString" ></label>
+        <label>Book: <input type="text" asp-for="ScriptureBook" ></label>
+        <input id="filter" class="buttons" type="submit" value="Filter" />
+    </form>
+    <table id="index-table" class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Scripture[0].Book)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Scripture[0].Chapter)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Scripture[0].Verses)
+                </th>
+                <th>
+                    Date Added
+                </th>
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Scripture)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Book)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Chapter)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Verses)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateAdded)
+                    </td>
+                    <td>
+                        ✏️ <a class="sorter" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> | 
+                        ℹ️ <a class="sorter" asp-page="./Details" asp-route-id="@item.Id">Details</a> | 
+                        🗑️<a class="sorter" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

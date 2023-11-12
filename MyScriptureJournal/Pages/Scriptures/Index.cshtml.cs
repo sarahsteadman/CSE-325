@@ -32,15 +32,6 @@ namespace MyScriptureJournal.Pages.Scriptures
     [BindProperty(SupportsGet = true)]
     public string? ScriptureBook { get; set; }
 
-    //Dates
-    [BindProperty(SupportsGet = true)]
-    public DateTime? StartDate { get; set; }
-
-    [BindProperty(SupportsGet = true)]
-    public DateTime? EndDate { get; set; }
-
-    public SelectList? Dates { get; set; }
-
 
     public async Task OnGetAsync()
     {
@@ -66,15 +57,21 @@ namespace MyScriptureJournal.Pages.Scriptures
       {
         scriptures = scriptures.Where(x => x.Book == ScriptureBook);
       }
-      if (StartDate != null && EndDate != null)
-      {
-        scriptures = scriptures.Where(s => s.DateAdded >= StartDate && s.DateAdded <= EndDate);
-      }
 
       Books = new SelectList(await genreQuery.Distinct().ToListAsync());
-      Dates = new SelectList(await dateQuery.Distinct().ToListAsync());
 
       Scripture = await scriptures.ToListAsync();
+    }
+    public async Task<IActionResult> OnGetSortByDate()
+    {
+      Scripture = await _context.Scripture.OrderBy(s => s.DateAdded).ToListAsync();
+      return Page();
+    }
+
+    public async Task<IActionResult> OnGetSortByBook()
+    {
+      Scripture = await _context.Scripture.OrderBy(s => s.Book).ToListAsync();
+      return Page();
     }
   }
 }

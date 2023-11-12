@@ -9,47 +9,59 @@
 
 <h4>Scripture</h4>
 <hr />
-<div class="row">
-    <div
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Scripture.Id" />
-            <div class="form-group">
-                <label asp-for="Scripture.Book" class="control-label"></label>
-                <input asp-for="Scripture.Book" class="form-control" />
-                <span asp-validation-for="Scripture.Book" class="text-danger"></span>
+<div>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Scripture.Id" />
+        <div class="scripture-form">
+            <div class="input-area">
+                <div>
+                    <label asp-for="Scripture.Book" class="control-label"></label>
+                    <input asp-for="Scripture.Book" class="form-control" />
+                    <span asp-validation-for="Scripture.Book" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Scripture.Chapter" class="control-label"></label>
+                    <input asp-for="Scripture.Chapter" class="form-control" />
+                    <span asp-validation-for="Scripture.Chapter" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Scripture.Verses" class="control-label"></label>
+                    <input asp-for="Scripture.Verses" class="form-control" />
+                    <span asp-validation-for="Scripture.Verses" class="text-danger"></span>
+                </div>
+                <div>
+                    <label class="control-label">Date Added</label>
+                    <input type="date" asp-for="Scripture.DateAdded" class="form-control" />
+                    <span asp-validation-for="Scripture.DateAdded" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Scripture.Verses" class="control-label"></label>
-                <input asp-for="Scripture.Verses" class="form-control" />
-                <span asp-validation-for="Scripture.Verses" class="text-danger"></span>
+            <div class="input-area">
+                <div class="form-group2">
+                    <label asp-for="Scripture.Text" class="control-label"></label>
+                    <textarea class="text-input" asp-for="Scripture.Text" class="form-control"></textarea>
+                    <span asp-validation-for="Scripture.Text" class="text-danger"></span>
+                </div>
+                <div class="form-group3">
+                    <label asp-for="Scripture.Notes" class="control-label"></label>
+                    <textarea class="note-input" asp-for="Scripture.Notes" class="form-control"></textarea>
+                    <span asp-validation-for="Scripture.Notes" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Scripture.Text" class="control-label"></label>
-                <input asp-for="Scripture.Text" class="form-control" />
-                <span asp-validation-for="Scripture.Text" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Scripture.Notes" class="control-label"></label>
-                <input asp-for="Scripture.Notes" class="form-control" />
-                <span asp-validation-for="Scripture.Notes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label "Date Added" class="control-label"></label>
-                <input type="date" asp-for="Scripture.DateAdded" class="form-control" />
-                <span asp-validation-for="Scripture.Notes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="buttons" />
+        </div>
+    </form>
+
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a class="link" asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
